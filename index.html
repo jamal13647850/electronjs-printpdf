@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print to PDF setting</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" >
+
+    <style>
+        .container{
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <h2>Print to PDF setting</h2>
+        <div class="form-group">
+            <label>Layout</label>
+            <select id="layout-setting" class="form-control">
+                <option selected value="0">Portrait</option>
+                <option value="1">Landscape</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Page Size</label>
+            <select id="page-size-setting" class="form-control">
+                <option selected value="0">A4</option>
+                <option value="A3">A3</option>
+                <option value="A5">A5</option>
+                <option value="Letter">Letter</option>
+                <option value="Legsl">Legsl</option>
+                <option value="Tabloid">Tabloid</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Margins</label>
+            <select id="margin-setting" class="form-control">
+                <option selected value="0">Default</option>
+                <option value="1">None</option>
+                <option value="2">Minimum</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Print Backgroun</label>
+            <input  type="checkbox" id="print-background" class="form-control">
+            <span>Background Graphics</span>
+
+        </div>
+        <div class="form-group">
+            <button id="printbtn" class="btn btn-danger">Print</button>
+            <button id="savepdfbtn" class="btn btn-success">Save As PDF</button>
+            <button id="viewpdfbtn" class="btn btn-info">View PDF</button>
+        </div>
+        <div id="log">
+
+        </div>
+    </div>
+
+
+    <script src="render.js"></script>
+</body>
+</html>

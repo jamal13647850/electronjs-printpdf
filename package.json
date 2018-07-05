@@ -1,0 +1,21 @@
+{
+  "name": "print-pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron -r babel-register ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^2.0.3",
+    "electron-window-state": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "devtron": "^1.4.0",
+    "electron-reload": "^1.2.5"
+  }
+}
