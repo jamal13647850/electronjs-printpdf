@@ -1,4 +1,4 @@
-const {remote} = require('electron');
+const {remote,ipcRenderer} = require('electron');
 const  {dialog} = require('electron').remote;
 const {BrowserWindow} = remote;
 const {shell} = require('electron')
@@ -7,6 +7,28 @@ const fs = require('fs');
 
 let printWin;
 let savePdfPath;
+
+ipcRenderer.on('menu',(e,arg)=>{
+    switch (arg) {
+        case 'VIEW_PDF':
+            viewPDF();
+            break;
+        case 'SAVE_AS_PDF':
+            savePDF();
+            break;
+        case 'PRINT':
+            print();
+            break;
+    }
+});
+
+
+
+ipcRenderer.send('channelfromrender','jamal','ghasemi');
+
+ipcRenderer.on('channelfrommain',(e,arg)=>{
+    console.log(arg);
+});
 
 function getPDFPrintSetting(){
     let options ={

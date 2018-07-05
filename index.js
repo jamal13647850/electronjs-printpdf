@@ -1,9 +1,16 @@
-import {app , BrowserWindow,Menu,MenuItem,globalShortcut} from 'electron';
+import {app , BrowserWindow,Menu,MenuItem,globalShortcut,ipcMain} from 'electron';
 import url from 'url';
 import path from 'path';
 import electronReload from 'electron-reload';
 electronReload(__dirname);
 import Devtron from 'devtron';
+
+
+ipcMain.on('channelfromrender',(e,arg1,arg2)=>{
+    console.log("run chanell");
+    console.log(arg1,arg2);
+    e.sender.send('channelfrommain','ok event');
+});
 
 
 let menu = new Menu();
