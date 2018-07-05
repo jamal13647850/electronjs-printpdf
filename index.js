@@ -22,6 +22,8 @@ let menuitem1 = new MenuItem({
 menu.append(menuitem1)  ;
 
 app.on('ready', () => {
+    Devtron.install();
+
     let mainWin = new BrowserWindow({
         width:400,
         height:600,
